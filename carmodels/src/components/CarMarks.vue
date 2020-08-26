@@ -10,9 +10,9 @@
         </div>
 
              <table>
-                <tr>
-                    <td>Renault</td>
-                    <td :class="{'green': showTable, 'blue': !showTable}" v-on:click="showTableModels">Ver modelos</td>
+                <tr v-for="mark in marks" :key="mark.codigo">
+                    <td>{{ mark.nome }}</td>
+                    <td :class="{'green': showTable, 'blue': !showTable}" v-on:click="showTableModels()">Ver modelos</td>
                 </tr>
             </table>
         </div>
@@ -21,6 +21,7 @@
 
 <script>
 import { bus } from '../bus.js';
+import axios from 'axios'
 
 export default {
     name: 'CarMarks',
@@ -28,15 +29,24 @@ export default {
         textTitle: String,
         titleTable: String
     },
-    data() {
+    data () {
         return {
-            showTable: false
+            showTable: false,
+            marks: []
         }
     },
+    mounted () {
+        var self = this;
+        axios
+      .get('https://parallelum.com.br/fipe/api/v1/carros/marcas')
+      .then(response => (self.marks = response.data))
+      .catch(err => (console.log('Error: ' + err)))
+    },
     methods: {
-        showTableModels() {
-            this.showTable = !this.showTable;
-            bus.$emit('showModelsTable', this.showTable);
+        showTableModels: function() {
+            var self = this;
+            self.showTable = !self.showTable;
+            bus.$emit('showModelsTable', self.showTable);
         } 
     }
 }

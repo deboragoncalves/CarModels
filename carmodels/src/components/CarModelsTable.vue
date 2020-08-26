@@ -10,8 +10,8 @@
         </div>
 
              <table>
-                <tr>
-                    <td>Onix</td>
+                <tr v-for="model in listModels" :key="model.codigo">
+                    <td>{{ model.nome }}</td>
                 </tr>
             </table>
         </div>
@@ -20,6 +20,7 @@
 
 <script>
 import { bus } from '../bus.js';
+import axios from 'axios'
 
 export default {
     name: 'CarModelsTable',
@@ -29,15 +30,25 @@ export default {
     },
     data() {
         return {
-            showModelsTable: false
+            showModelsTable: false,
+            listModels: []
         }
     },
     created() {
+            var self = this;
+
             bus.$on('showModelsTable', (data) => {
-                this.showModelsTable = data;
+                self.showModelsTable = data;
             })
-        }
+    },
+    mounted() {
+        var self = this;
+        axios
+      .get('https://parallelum.com.br/fipe/api/v1/carros/marcas/1/modelos')
+      .then(response => (self.listModels = response.data.modelos))
+      .catch(err => (console.log('Error: ' + err)))
     }
+}
 </script>
 
 <style scoped>
