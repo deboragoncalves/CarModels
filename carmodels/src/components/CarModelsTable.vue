@@ -1,5 +1,5 @@
 <template>
-    <div id="models" v-if="showModelsTable">
+    <div id="models" v-show="showModelsTable">
         <div id="title">
             {{ textTitle }}
         </div>
@@ -29,7 +29,7 @@ export default {
     },
     data() {
         return {
-            showModelsTable: null
+            showModelsTable: false
         }
     },
     created() {

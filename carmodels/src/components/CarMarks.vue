@@ -12,7 +12,7 @@
              <table>
                 <tr>
                     <td>Renault</td>
-                    <td id="models" v-on:click="showTableModels">Ver modelos</td>
+                    <td :class="{'green': showTable, 'blue': !showTable}" v-on:click="showTableModels">Ver modelos</td>
                 </tr>
             </table>
         </div>
@@ -35,7 +35,7 @@ export default {
     },
     methods: {
         showTableModels() {
-            this.showTable = true;
+            this.showTable = !this.showTable;
             bus.$emit('showModelsTable', this.showTable);
         } 
     }
@@ -84,9 +84,17 @@ table td {
     padding: 15px 15px 20px 15px;
 }
 
-#models {
+.green {
+    color: #3FBF4C;
+    font-weight: bold;
     padding: 15px 15px 15px 15px;
-    color: #3F59BF;
+    cursor: pointer;
+}
+
+.blue {
+    color: #167AED;
+    font-weight: bold;
+    padding: 15px 15px 15px 15px;
     cursor: pointer;
 }
 
