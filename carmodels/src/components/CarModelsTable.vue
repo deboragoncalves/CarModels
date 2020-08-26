@@ -1,5 +1,5 @@
 <template>
-    <div id="marks">
+    <div id="models" v-if="showModelsTable">
         <div id="title">
             {{ textTitle }}
         </div>
@@ -11,8 +11,7 @@
 
              <table>
                 <tr>
-                    <td>Renault</td>
-                    <td id="models" v-on:click="showTableModels">Ver modelos</td>
+                    <td>Onix</td>
                 </tr>
             </table>
         </div>
@@ -23,27 +22,27 @@
 import { bus } from '../bus.js';
 
 export default {
-    name: 'CarMarks',
+    name: 'CarModelsTable',
     props: {
         textTitle: String,
         titleTable: String
     },
     data() {
         return {
-            showTable: false
+            showModelsTable: null
         }
     },
-    methods: {
-        showTableModels() {
-            this.showTable = true;
-            bus.$emit('showModelsTable', this.showTable);
-        } 
+    created() {
+            bus.$on('showModelsTable', (data) => {
+                this.showModelsTable = data;
+            })
+        }
     }
-}
 </script>
 
 <style scoped>
-#marks {
+#models {
+    margin-top: 30px;
     box-shadow: -9px 11px 11px rgba(58, 59, 69, .15);
 }
 
@@ -82,12 +81,6 @@ table td {
     text-align: left; 
     border-bottom: 0.1px solid gray;
     padding: 15px 15px 20px 15px;
-}
-
-#models {
-    padding: 15px 15px 15px 15px;
-    color: #3F59BF;
-    cursor: pointer;
 }
 
 </style>

@@ -5,6 +5,7 @@
       {{ textTitle }}
       </div>
     <CarMarks textTitle="Marcas" titleTable="Marca" />
+    <CarModelsTable textTitle="Modelos" titleTable="Modelo" />
     <Footer textFooter="Copyright © Navita 2020" />
   </div>
 </template>
@@ -13,15 +14,17 @@
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import CarMarks from './components/CarMarks.vue'
+import CarModelsTable from './components/CarModelsTable.vue'
 
 export default {
   name: 'CarModels',
   components: {
     Header,
     Footer,
-    CarMarks
+    CarMarks,
+    CarModelsTable
   },
-  data: function() {
+  data() {
     return {
       textTitle: "Veículos"
     }
