@@ -7,7 +7,7 @@
 
       <table>
         <tr v-for="model in listModels" :key="model.codigo">
-          <td>{{ model.nome }}</td>
+          <td>{{ model.nome | filteredNames }}</td>
         </tr>
       </table>
     </div>

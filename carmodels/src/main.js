@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import CarModels from './CarModels.vue'
 import axios from 'axios'
+import "@/filters/filters";
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
