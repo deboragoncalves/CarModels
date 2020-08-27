@@ -6,8 +6,8 @@
       <div id="titleTable">{{ titleTable }}</div>
 
       <table>
-        <tr v-for="mark in marks" :key="mark.codigo">
-          <td>{{ mark.nome }}</td>
+        <tr v-for="mark in filteredMarks" :key="mark.codigo">
+          <td>{{ mark }}</td>
           <td
             :class="{'green': showTable, 'blue': !showTable}"
             v-on:click="showTableModels(mark.codigo)"
@@ -22,7 +22,7 @@
 import { bus } from "../bus.js";
 import axios from "axios";
 
-const marksEndpoint = 'https://parallelum.com.br/fipe/api/v1/carros/marcas';
+const marksEndpoint = "https://parallelum.com.br/fipe/api/v1/carros/marcas";
 
 export default {
   name: "CarMarks",
@@ -35,6 +35,17 @@ export default {
       showTable: false,
       marks: [],
     };
+  },
+  computed: {
+    filteredMarks: function () {
+      return this.marks.map((mark) => {
+        mark = mark.nome.toString();
+        return (
+          mark.slice(0, 1).toUpperCase() +
+          mark.slice(1, mark.lenght).toLowerCase()
+        );
+      });
+    }
   },
   mounted() {
     var self = this;

@@ -44,9 +44,9 @@ export default {
 
       axios
         .get(
-          "https://parallelum.com.br/fipe/api/v1/carros/marcas/" +
+          'https://parallelum.com.br/fipe/api/v1/carros/marcas/' +
             localStorage.getItem("markId") +
-            "/modelos"
+            '/modelos'
         )
         .then((response) => (self.listModels = response.data.modelos))
         .catch((err) => console.log("Error: " + err));

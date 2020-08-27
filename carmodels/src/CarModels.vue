@@ -29,7 +29,7 @@ export default {
   },
 
   created() {
-    var self = this
+    var self = this;
     self.clearLocalStorage();
   },
 
