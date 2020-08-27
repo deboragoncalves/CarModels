@@ -6,8 +6,8 @@
       <div id="titleTable">{{ titleTable }}</div>
 
       <table>
-        <tr v-for="mark in filteredMarks" :key="mark.codigo">
-          <td>{{ mark }}</td>
+        <tr v-for="mark in marks" :key="mark.codigo">
+          <td>{{ mark.nome | filteredMarks }}</td>
           <td
             :class="{'green': showTable, 'blue': !showTable}"
             v-on:click="showTableModels(mark.codigo)"
@@ -36,16 +36,19 @@ export default {
       marks: [],
     };
   },
-  computed: {
-    filteredMarks: function () {
-      return this.marks.map((mark) => {
-        mark = mark.nome.toString();
-        return (
-          mark.slice(0, 1).toUpperCase() +
-          mark.slice(1, mark.lenght).toLowerCase()
-        );
-      });
-    }
+  filters: {
+    filteredMarks: function (name) {
+      name = name.toString().split(" ");
+
+      return name
+        .map(function (word) {
+          return (
+            word.slice(0, 1).toUpperCase() +
+            word.slice(1, word.lenght).toLowerCase()
+          );
+        })
+        .join(' ');
+    },
   },
   mounted() {
     var self = this;
