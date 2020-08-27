@@ -12,7 +12,7 @@
              <table>
                 <tr v-for="mark in marks" :key="mark.codigo">
                     <td>{{ mark.nome }}</td>
-                    <td :class="{'green': showTable, 'blue': !showTable}" v-on:click="showTableModels()">Ver modelos</td>
+                    <td :class="{'green': showTable, 'blue': !showTable}" v-on:click="showTableModels(mark.codigo)">Ver modelos</td>
                 </tr>
             </table>
         </div>
@@ -39,14 +39,19 @@ export default {
         var self = this;
         axios
       .get('https://parallelum.com.br/fipe/api/v1/carros/marcas')
-      .then(response => (self.marks = response.data))
+      .then(response => {
+          self.marks = response.data
+        })
       .catch(err => (console.log('Error: ' + err)))
     },
     methods: {
-        showTableModels: function() {
-            var self = this;
-            self.showTable = !self.showTable;
-            bus.$emit('showModelsTable', self.showTable);
+        showTableModels: function(id) {
+            var self = this
+            self.showTable = !self.showTable
+            bus.$emit('showModelsTable', self.showTable)
+            bus.$emit('requestAPI')
+            localStorage.clear()
+            localStorage.setItem('markId', id)
         } 
     }
 }

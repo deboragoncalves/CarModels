@@ -34,19 +34,20 @@ export default {
             listModels: []
         }
     },
-    created() {
-            var self = this;
-
+    created() {            
             bus.$on('showModelsTable', (data) => {
-                self.showModelsTable = data;
-            })
+                this.showModelsTable = data
+            }),
+
+            bus.$on('requestAPI', this.requestAPI)
     },
-    mounted() {
-        var self = this;
-        axios
-      .get('https://parallelum.com.br/fipe/api/v1/carros/marcas/1/modelos')
-      .then(response => (self.listModels = response.data.modelos))
-      .catch(err => (console.log('Error: ' + err)))
+    methods: {
+        requestAPI() {
+            axios
+            .get('https://parallelum.com.br/fipe/api/v1/carros/marcas/' + localStorage.getItem('markId') + '/modelos')
+            .then(response => (this.listModels = response.data.modelos))
+            .catch(err => (console.log('Error: ' + err)))
+        }
     }
 }
 </script>
