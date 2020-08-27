@@ -1,27 +1,24 @@
 <template>
-    <div id="header">
-      {{ textHeader }}
-    </div>
+  <div id="header">{{ textHeader }}</div>
 </template>
 
 <script>
-
 export default {
-  name: 'Header',
+  name: "Header",
   props: {
-        textHeader: String
-  }
-}
+    textHeader: String,
+  },
+};
 </script>
 
 <style scoped>
-    #header {
-        padding: 25px;
-        font-family: Arial;
-        font-size: 17px;
-        background-color: #FFFFFF;
-        color: #72BF3F;
-        font-weight: bold;
-        box-shadow: -9px 11px 11px rgba(58, 59, 69, .15);
-    }
+#header {
+  padding: 25px;
+  font-family: Arial;
+  font-size: 17px;
+  background-color: #ffffff;
+  color: #72bf3f;
+  font-weight: bold;
+  box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
+}
 </style>
