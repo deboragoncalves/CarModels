@@ -70,6 +70,8 @@ export default {
 <style scoped>
 #marks {
   box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
+  -webkit-box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
+  -moz-box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
 }
 
 #title {
