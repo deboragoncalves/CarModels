@@ -2,9 +2,10 @@
   <div id="carModels">
     <Header textHeader="Navita" />
     <div id="title">{{ textTitle }}</div>
-    <CarMarks textTitle="Marcas" titleTable="Marca" />
-    <CarModelsTable textTitle="Modelos" titleTable="Modelo" />
+    <CarMarks textTitle="Marcas" titleTable="Marca" v-scroll-to="'#carModelsTable'"  />
+    <CarModelsTable id="carModelsTable" textTitle="Modelos" titleTable="Modelo" />
     <Footer textFooter="Copyright © Navita 2020" />
+    <button v-scroll-to="'#carModels'" ><img src="http://www.hostcgs.com.br/hostimagem/images/109button.png" id="imageTop" /></button>
   </div>
 </template>
 
@@ -24,13 +25,12 @@ export default {
   },
   data() {
     return {
-      textTitle: "Veículos",
+      textTitle: "Veículos"
     };
   },
-
   created() {
     localStorage.clear()
-  }
+  },
 };
 </script>
 
@@ -39,6 +39,14 @@ export default {
   margin: 0;
   font-family: Arial;
   background-color: #f7f8fb;
+}
+
+#imageTop {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  width: 60px;
+  border-radius: 4px;
 }
 
 #title {

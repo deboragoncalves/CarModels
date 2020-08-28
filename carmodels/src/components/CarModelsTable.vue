@@ -26,6 +26,7 @@ export default {
   },
   data() {
     return {
+      currentView: null,
       showModelsTable: false,
       listModels: [],
     };
@@ -36,7 +37,7 @@ export default {
     bus.$on("showModelsTable", (data) => {
       self.showModelsTable = data;
     }),
-      bus.$on("getAllModels", self.getAllModels);
+      bus.$on("getAllModels", self.getAllModels)
   },
   methods: {
     getAllModels() {

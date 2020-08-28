@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       showTable: false,
-      itemClicked: 0,
+      itemClicked: undefined,
       marks: []
     };
   },
@@ -60,7 +60,7 @@ export default {
       bus.$emit("showModelsTable", self.showTable);
 
       bus.$emit("getAllModels");
-
+      
       localStorage.setItem("markId", id);
     },
   },
