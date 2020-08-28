@@ -44,6 +44,10 @@ export default {
   -moz-box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
 }
 
+#carModelsTable {
+  margin: 40px 20px 20px 20px;
+}
+
 #carMarksTable {
   margin: 20px;
 }
