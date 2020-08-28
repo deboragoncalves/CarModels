@@ -36,10 +36,10 @@ export default {
     bus.$on("showModelsTable", (data) => {
       self.showModelsTable = data;
     }),
-      bus.$on("requestAPI", self.requestAPI);
+      bus.$on("getAllModels", self.getAllModels);
   },
   methods: {
-    requestAPI() {
+    getAllModels() {
       var self = this;
 
       axios

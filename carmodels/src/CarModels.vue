@@ -29,17 +29,8 @@ export default {
   },
 
   created() {
-    var self = this;
-    self.clearLocalStorage();
-  },
-
-  methods: {
-    clearLocalStorage() {
-      if (localStorage != null) {
-        localStorage.clear();
-      }
-    },
-  },
+    localStorage.clear()
+  }
 };
 </script>
 

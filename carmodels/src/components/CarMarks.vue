@@ -2,15 +2,14 @@
   <div id="marks">
     <div id="title">{{ textTitle }}</div>
 
-    <div id="table">
+    <div id="tableStructure">
       <div id="titleTable">{{ titleTable }}</div>
 
-      <table>
-        <tr v-for="mark in marks" :key="mark.codigo">
+      <table id="table">
+        <tr id="table1" v-for="(mark, index) in marks" :key="mark.codigo">
           <td>{{ mark.nome | filteredNames }}</td>
-          <td
-            :class="{'green': showTable, 'blue': !showTable}"
-            v-on:click="showTableModels(mark.codigo)"
+          <td :class="[itemClicked == index ? 'green' : 'blue', 'seeModelStaticClass']"
+            v-on:click="showTableModels(mark.codigo, index)"
           >Ver modelos</td>
         </tr>
       </table>
@@ -33,25 +32,35 @@ export default {
   data() {
     return {
       showTable: false,
-      marks: [],
+      itemClicked: 0,
+      marks: []
     };
   },
   mounted() {
     var self = this;
-
-    axios
+    self.getAllMarks();
+  },
+  methods: {
+    getAllMarks() {
+      var self = this;
+       axios
       .get(marksEndpoint)
       .then((response) => {
         self.marks = response.data;
       })
       .catch((err) => console.log("Error: " + err));
-  },
-  methods: {
-    showTableModels: function (id) {
-      var self = this;
+    },
+    showTableModels(id, index) {
+      var self = this
+
+      this.itemClicked = index;
+
       self.showTable = !self.showTable;
+
       bus.$emit("showModelsTable", self.showTable);
-      bus.$emit("requestAPI");
+
+      bus.$emit("getAllModels");
+
       localStorage.setItem("markId", id);
     },
   },
@@ -72,7 +81,7 @@ export default {
   margin: 15px 35px 15px 35px;
 }
 
-#table {
+#tableStructure {
   margin: 15px 35px 15px 35px;
 }
 
@@ -100,17 +109,17 @@ table td {
   padding: 15px 15px 20px 15px;
 }
 
+.seeModelStaticClass {
+    font-weight: bold;
+    padding: 15px 15px 15px 15px;
+    cursor: pointer;
+}
+
 .green {
   color: #3fbf4c;
-  font-weight: bold;
-  padding: 15px 15px 15px 15px;
-  cursor: pointer;
 }
 
 .blue {
   color: #167aed;
-  font-weight: bold;
-  padding: 15px 15px 15px 15px;
-  cursor: pointer;
 }
 </style>
