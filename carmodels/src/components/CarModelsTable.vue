@@ -1,5 +1,6 @@
 <template>
   <div id="models" v-show="showModelsTable">
+    <div id="mainDiv">
     <div id="title">{{ textTitle }}</div>
 
     <div id="table">
@@ -10,6 +11,7 @@
           <td>{{ model.nome | filteredNames }}</td>
         </tr>
       </table>
+    </div>
     </div>
   </div>
 </template>
@@ -58,32 +60,38 @@ export default {
 
 <style scoped>
 #models {
-  margin-top: 30px;
   box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
   -webkit-box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
   -moz-box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
+  background-color: #F7F8FB;
+  color: #5A5C69;
+}
+
+#mainDiv {
+  background-color: #F7F8FB;
+  box-shadow: 8px 8px 5px 0px rgba(58, 59, 69, 0.15);
+  -webkit-box-shadow: 8px 8px 5px 0px rgba(58, 59, 69, 0.15);
+  -moz-box-shadow: 8px 8px 5px 0px rgba(58, 59, 69, 0.15); 
 }
 
 #title {
-  font-size: 17px;
+  font-size: 13px;
   font-weight: bold;
-  color: #3f59bf;
+  color: #4E73DF;
   font-family: Arial;
   background-color: #f8f9fc;
-  margin: 15px 35px 15px 35px;
-}
-
-#table {
-  margin: 15px 35px 15px 35px;
+  margin-left: 5px;
 }
 
 #titleTable {
   text-align: left;
   padding: 12px;
-  border-bottom: 0.2px solid gray;
-  border-top: 0.2px solid gray;
+  border-bottom: 0.1px solid #E3E6F0;
+  border-top: 0.1px solid #E3E6F0;
   color: gray;
   font-weight: bold;
+  font-size: 13px;
+  background-color: #ffffff;
 }
 
 table {
@@ -93,11 +101,12 @@ table {
   color: gray;
   width: 100%;
   border-collapse: collapse;
+  border: 1px solid #E3E6F0;
 }
 
 table td {
   text-align: left;
-  border-bottom: 0.1px solid gray;
+  border-bottom: 0.1px solid #E3E6F0;
   padding: 15px 15px 20px 15px;
 }
 </style>

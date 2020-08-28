@@ -16,8 +16,8 @@ export default {
   padding: 25px;
   font-family: Arial;
   font-size: 17px;
-  background-color: #ffffff;
-  color: #72bf3f;
+  background-color: #FFFFFF;
+  color: #1CC88A;
   font-weight: bold;
   box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
 }
