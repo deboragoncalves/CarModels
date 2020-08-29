@@ -1,11 +1,11 @@
 <template>
   <div id="marks">
     <div id="main-div">
-        <div id="title">{{ textTitle }}</div>
+        <div id="subTitle">{{ textTitle }}</div>
 
       <div id="title-table">{{ titleTable }}</div>
 
-      <table id="table">
+      <table>
         <tr v-for="(mark, index) in marks" :key="mark.codigo">
           <td id="mark-name-class">{{ mark.nome | filteredNames }}</td>
           <td
@@ -21,6 +21,8 @@
 <script>
 import { bus } from "../bus.js";
 import axios from "axios";
+import '@/assets/styles/tableStyle.css';
+import 'normalize.css';
 
 const marksEndpoint = "https://parallelum.com.br/fipe/api/v1/carros/marcas";
 
@@ -68,54 +70,7 @@ export default {
 };
 </script>
 
-<style scoped>
-#marks {
-  box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  background-color: #f7f8fb;
-  color: #5a5c69;
-}
-
-#main-div {
-  background-color: #f7f8fb;
-  box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-}
-
-#title {
-  color: #4e73df;
-  font-weight: bold;
-  font-size: 13px;
-  font-family: Arial;
-  background-color: #f7f8fb;
-  padding: 0px;
-  margin: 0px;
-}
-
-#title-table {
-  text-align: left;
-  margin-top: 20px;
-  padding: 14px 30px 14px 30px;
-  border-bottom: 0.1px solid #e3e6f0;
-  border-top: 0.1px solid #e3e6f0;
-  color: gray;
-  font-weight: bold;
-  font-size: 13px;
-  background-color: #ffffff;
-}
-
-table {
-  background-color: #ffffff;
-  font-family: Arial;
-  font-size: 13px;
-  color: gray;
-  width: 100%;
-  border-collapse: collapse;
-  border: 0.1px solid #e3e6f0;
-}
-
+<style>
 #mark-name-class {
   text-align: left;
   border-bottom: 0.1px solid #e3e6f0;
@@ -123,6 +78,7 @@ table {
   padding-right: 30px;
   padding-top: 8px;
   padding-bottom: 22px;
+  width: 40%;
 }
 
 .see-model-class {

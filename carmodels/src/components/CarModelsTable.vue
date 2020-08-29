@@ -1,14 +1,14 @@
 <template>
   <div id="models" v-show="showModelsTable">
     <div id="main-div">
-    <div id="title">{{ textTitle }}</div>
+    <div id="subTitle">{{ textTitle }}</div>
 
     <div id="table">
       <div id="title-table">{{ titleTable }}</div>
 
       <table>
         <tr v-for="model in listModels" :key="model.codigo">
-          <td>{{ model.nome | filteredNames }}</td>
+          <td id="model-name-class">{{ model.nome | filteredNames }}</td>
         </tr>
       </table>
     </div>
@@ -19,6 +19,8 @@
 <script>
 import { bus } from "../bus.js";
 import axios from "axios";
+import '@/assets/styles/tableStyle.css';
+import 'normalize.css';
 
 export default {
   name: "CarModelsTable",
@@ -58,54 +60,11 @@ export default {
 };
 </script>
 
-<style scoped>
-#models {
-  box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  background-color: #F7F8FB;
-  color: #5A5C69;
-}
-
-#main-div {
-  background-color: #F7F8FB;
-  box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15); 
-}
-
-#title {
-  font-size: 13px;
-  font-weight: bold;
-  color: #4E73DF;
-  font-family: Arial;
-  background-color: #f8f9fc;
-}
-
-#title-table {
+<style>
+#model-name-class {
   text-align: left;
-  padding: 12px;
-  border-bottom: 0.1px solid #E3E6F0;
-  border-top: 0.1px solid #E3E6F0;
-  color: gray;
-  font-weight: bold;
-  font-size: 13px;
-  background-color: #ffffff;
+  border-bottom: 0.1px solid #e3e6f0;
+  padding: 14px 30px 14px 30px;
 }
 
-table {
-  background-color: #ffffff;
-  font-family: Arial;
-  font-size: 13px;
-  color: gray;
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #E3E6F0;
-}
-
-table td {
-  text-align: left;
-  border-bottom: 0.1px solid #E3E6F0;
-  padding: 15px 15px 20px 15px;
-}
 </style>
