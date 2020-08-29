@@ -1,20 +1,19 @@
 <template>
   <div id="marks">
-    <div id="mainDiv">
-    <div id="title">{{ textTitle }}</div>
+    <div id="main-div">
+        <div id="title">{{ textTitle }}</div>
 
-    <div id="tableStructure">
-      <div id="titleTable">{{ titleTable }}</div>
+      <div id="title-table">{{ titleTable }}</div>
 
       <table id="table">
-        <tr id="table1" v-for="(mark, index) in marks" :key="mark.codigo">
-          <td>{{ mark.nome | filteredNames }}</td>
-          <td :class="[itemClicked == index ? 'green' : 'blue', 'seeModelStaticClass']"
+        <tr v-for="(mark, index) in marks" :key="mark.codigo">
+          <td id="mark-name-class">{{ mark.nome | filteredNames }}</td>
+          <td
+            :class="[itemClicked == index ? 'green' : 'blue', 'see-model-class']"
             v-on:click="showTableModels(mark.codigo, index)"
           >Ver modelos</td>
         </tr>
       </table>
-    </div>
     </div>
   </div>
 </template>
@@ -35,7 +34,7 @@ export default {
     return {
       showTable: false,
       itemClicked: undefined,
-      marks: []
+      marks: [],
     };
   },
   mounted() {
@@ -45,24 +44,24 @@ export default {
   methods: {
     getAllMarks() {
       var self = this;
-       axios
-      .get(marksEndpoint)
-      .then((response) => {
-        self.marks = response.data;
-      })
-      .catch((err) => console.log("Error: " + err));
+      axios
+        .get(marksEndpoint)
+        .then((response) => {
+          self.marks = response.data;
+        })
+        .catch((err) => console.log("Error: " + err));
     },
     showTableModels(id, index) {
-      var self = this
+      var self = this;
 
-      this.itemClicked = index;
+      self.itemClicked = index;
 
       self.showTable = true;
 
       bus.$emit("showModelsTable", self.showTable);
 
       bus.$emit("getAllModels");
-      
+
       localStorage.setItem("markId", id);
     },
   },
@@ -71,35 +70,36 @@ export default {
 
 <style scoped>
 #marks {
-  box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
-  -webkit-box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
-  -moz-box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
-  background-color: #F7F8FB;
-  color: #5A5C69;
+  box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  background-color: #f7f8fb;
+  color: #5a5c69;
 }
 
-#mainDiv {
-  background-color: #F7F8FB;
-  box-shadow: 8px 8px 5px 0px rgba(58, 59, 69, 0.15);
-  -webkit-box-shadow: 8px 8px 5px 0px rgba(58, 59, 69, 0.15);
-  -moz-box-shadow: 8px 8px 5px 0px rgba(58, 59, 69, 0.15); 
+#main-div {
+  background-color: #f7f8fb;
+  box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
 }
 
 #title {
-  font-size: 13px;
+  color: #4e73df;
   font-weight: bold;
-  color: #4E73DF;
+  font-size: 13px;
   font-family: Arial;
-  background-color: #f8f9fc;
-  margin-left: 5px;
+  background-color: #f7f8fb;
+  padding: 0px;
+  margin: 0px;
 }
 
-#titleTable {
+#title-table {
   text-align: left;
   margin-top: 20px;
-  padding: 14px;
-  border-bottom: 0.1px solid #E3E6F0;
-  border-top: 0.1px solid #E3E6F0;
+  padding: 14px 30px 14px 30px;
+  border-bottom: 0.1px solid #e3e6f0;
+  border-top: 0.1px solid #e3e6f0;
   color: gray;
   font-weight: bold;
   font-size: 13px;
@@ -113,26 +113,34 @@ table {
   color: gray;
   width: 100%;
   border-collapse: collapse;
-  border: 0.1px solid #E3E6F0;
+  border: 0.1px solid #e3e6f0;
 }
 
-table td {
+#mark-name-class {
   text-align: left;
-  border-bottom: 0.1px solid #E3E6F0;
-  padding: 15px 15px 20px 15px;
+  border-bottom: 0.1px solid #e3e6f0;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 8px;
+  padding-bottom: 22px;
 }
 
-.seeModelStaticClass {
-    font-weight: bold;
-    padding: 15px 15px 15px 15px;
-    cursor: pointer;
+.see-model-class {
+  text-align: left;
+  border-bottom: 0.1px solid #e3e6f0;
+  font-weight: bold;
+  cursor: pointer;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 22px;
 }
 
 .green {
-  color: #1CC88A;
+  color: #1cc88a;
 }
 
 .blue {
-  color: #4E73DF;
+  color: #4e73df;
 }
 </style>

@@ -19,6 +19,8 @@ export default {
   background-color: #FFFFFF;
   color: #1CC88A;
   font-weight: bold;
-  box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
+  box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
 }
 </style>

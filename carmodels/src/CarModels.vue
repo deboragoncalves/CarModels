@@ -1,11 +1,11 @@
 <template>
-  <div id="carModels">
+  <div id="car-models">
     <Header textHeader="Navita" />
     <div id="title">{{ textTitle }}</div>
-    <CarMarks id="carMarksTable" textTitle="Marcas" titleTable="Marca" v-scroll-to="'#carModelsTable'"  />
-    <CarModelsTable id="carModelsTable" textTitle="Modelos" titleTable="Modelo" />
+    <CarMarks id="car-marks-table" textTitle="Marcas" titleTable="Marca" v-scroll-to="'#car-models-table'"  />
+    <CarModelsTable id="car-models-table" textTitle="Modelos" titleTable="Modelo" />
     <Footer textFooter="Copyright © Navita 2020" />
-    <img src="http://www.hostcgs.com.br/hostimagem/images/109button.png" id="imageTop" v-scroll-to="'#carModels'" />
+    <img src="http://www.hostcgs.com.br/hostimagem/images/109button.png" id="image-top" v-scroll-to="'#car-models'" />
   </div>
 </template>
 
@@ -35,24 +35,23 @@ export default {
 </script>
 
 <style>
-#carModels {
-  margin: 0;
+#car-models {
   font-family: Arial;
   background-color: #f7f8fb;
-  box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
-  -webkit-box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
-  -moz-box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
+  box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
 }
 
-#carModelsTable {
+#car-models-table {
   margin: 40px 20px 20px 20px;
 }
 
-#carMarksTable {
+#car-marks-table {
   margin: 20px;
 }
 
-#imageTop {
+#image-top {
   position: fixed;
   bottom: 10px;
   right: 20px;

@@ -1,10 +1,10 @@
 <template>
   <div id="models" v-show="showModelsTable">
-    <div id="mainDiv">
+    <div id="main-div">
     <div id="title">{{ textTitle }}</div>
 
     <div id="table">
-      <div id="titleTable">{{ titleTable }}</div>
+      <div id="title-table">{{ titleTable }}</div>
 
       <table>
         <tr v-for="model in listModels" :key="model.codigo">
@@ -60,18 +60,18 @@ export default {
 
 <style scoped>
 #models {
-  box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
-  -webkit-box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
-  -moz-box-shadow: -9px 11px 11px rgba(58, 59, 69, 0.15);
+  box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
   background-color: #F7F8FB;
   color: #5A5C69;
 }
 
-#mainDiv {
+#main-div {
   background-color: #F7F8FB;
-  box-shadow: 8px 8px 5px 0px rgba(58, 59, 69, 0.15);
-  -webkit-box-shadow: 8px 8px 5px 0px rgba(58, 59, 69, 0.15);
-  -moz-box-shadow: 8px 8px 5px 0px rgba(58, 59, 69, 0.15); 
+  box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15); 
 }
 
 #title {
@@ -80,10 +80,9 @@ export default {
   color: #4E73DF;
   font-family: Arial;
   background-color: #f8f9fc;
-  margin-left: 5px;
 }
 
-#titleTable {
+#title-table {
   text-align: left;
   padding: 12px;
   border-bottom: 0.1px solid #E3E6F0;
