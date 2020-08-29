@@ -18,5 +18,8 @@ export default {
   font-size: 13px;
   padding: 25px;
   background-color: #FFFFFF;
+  box-shadow: 0 0 100px rgba(58, 59, 69, 0.15);
+  -webkit-box-shadow: 0 0 100px rgba(58, 59, 69, 0.15);
+  -moz-box-shadow: 0 0 100px rgba(58, 59, 69, 0.15);
 }
 </style>

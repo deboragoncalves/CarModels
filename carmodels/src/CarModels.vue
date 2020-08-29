@@ -1,12 +1,21 @@
 <template>
   <div id="car-models">
-    <Header textHeader="Navita" />
-    <div id="title">{{ textTitle }}</div>
-    <CarMarks id="car-marks-table" textTitle="Marcas" titleTable="Marca" v-scroll-to="'#car-models-table'"  />
-    <CarModelsTable id="car-models-table" textTitle="Modelos" titleTable="Modelo" />
-    <Footer textFooter="Copyright © Navita 2020" />
-    <img src="http://www.hostcgs.com.br/hostimagem/images/109button.png" id="image-top" v-scroll-to="'#car-models'" />
-  </div>
+      <Header textHeader="Navita" />
+      <div id="title">{{ textTitle }}</div>
+      <CarMarks
+        id="car-marks-table"
+        textTitle="Marcas"
+        titleTable="Marca"
+        v-scroll-to="'#car-models-table'"
+      />
+      <CarModelsTable id="car-models-table" textTitle="Modelos" titleTable="Modelo" />
+      <Footer textFooter="Copyright © Navita 2020" />
+      <img
+        src="http://www.hostcgs.com.br/hostimagem/images/213botao.png"
+        id="image-top"
+        v-scroll-to="'#car-models'"
+      />
+    </div>
 </template>
 
 <script>
@@ -25,11 +34,11 @@ export default {
   },
   data() {
     return {
-      textTitle: "Veículos"
+      textTitle: "Veículos",
     };
   },
   created() {
-    localStorage.clear()
+    localStorage.clear();
   },
 };
 </script>
@@ -38,9 +47,10 @@ export default {
 #car-models {
   font-family: Arial;
   background-color: #f7f8fb;
-  box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
-  -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
+  margin-bottom: 50px;
+  box-shadow: 0 30px 30px rgba(58, 59, 69, 0.15);
+  -webkit-box-shadow: 0 30px 30px rgba(58, 59, 69, 0.15);
+  -moz-box-shadow: 0 30px 30px rgba(58, 59, 69, 0.15);
 }
 
 #car-models-table {
@@ -60,7 +70,7 @@ export default {
 }
 
 #title {
-  color: #5A5C69;
+  color: #5a5c69;
   font-size: 23px;
   margin: 25px;
 }
