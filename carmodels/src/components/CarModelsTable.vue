@@ -1,7 +1,7 @@
 <template>
-  <div id="models" v-show="showModelsTable">
+  <div v-show="showModelsTable">
     <div id="main-div">
-    <div id="subTitle">{{ textTitle }}</div>
+    <div id="sub-title">{{ textTitle }}</div>
 
     <div id="table">
       <div id="title-table">{{ titleTable }}</div>

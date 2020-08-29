@@ -1,7 +1,7 @@
 <template>
-  <div id="marks">
+  <div>
     <div id="main-div">
-        <div id="subTitle">{{ textTitle }}</div>
+        <div id="sub-title">{{ textTitle }}</div>
 
       <div id="title-table">{{ titleTable }}</div>
 
