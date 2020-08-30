@@ -62,7 +62,7 @@ export default {
 }
 
 #car-marks-table {
-  margin: 20px 20px 0px 20px;
+  margin: 0px 20px 0px 20px;
 }
 
 #image-top {
@@ -75,8 +75,9 @@ export default {
 
 #title {
   color: #5a5c69;
-  font-size: 23px;
+  font-size: 26px;
   font-weight: 600;
-  margin: 24px 20px 24px 20px;
+  padding: 30px 25px 23px 25px;
+  margin: 0;
 }
 </style>

@@ -59,11 +59,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+#table {
+  padding: 5px 0px 50px 0px;
+}
+
 #model-name-class {
   text-align: left;
   border-bottom: 0.1px solid #e3e6f0;
-  padding: 16px 25px 16px 25px;
+  padding: 17px 25px 14px 13px;
 }
 
 </style>
