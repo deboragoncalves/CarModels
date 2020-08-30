@@ -45,33 +45,36 @@ export default {
 
 <style>
 #car-models {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
   font-family: Arial;
   background-color: #f7f8fb;
-  margin-bottom: 50px;
   box-shadow: 0 30px 30px rgba(58, 59, 69, 0.15);
   -webkit-box-shadow: 0 30px 30px rgba(58, 59, 69, 0.15);
   -moz-box-shadow: 0 30px 30px rgba(58, 59, 69, 0.15);
 }
 
 #car-models-table {
-  margin: 40px 20px 20px 20px;
+  margin: 0px 20px 0px 20px;
 }
 
 #car-marks-table {
-  margin: 20px;
+  margin: 20px 20px 30px 20px;
 }
 
 #image-top {
   position: fixed;
   bottom: 10px;
   right: 20px;
-  width: 60px;
+  width: 45px;
   border-radius: 4px;
 }
 
 #title {
   color: #5a5c69;
   font-size: 23px;
-  margin: 25px;
+  margin: 24px 20px 24px 20px;
 }
 </style>

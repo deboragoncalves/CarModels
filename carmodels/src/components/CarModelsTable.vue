@@ -30,7 +30,6 @@ export default {
   },
   data() {
     return {
-      currentView: null,
       showModelsTable: false,
       listModels: [],
     };
@@ -64,7 +63,7 @@ export default {
 #model-name-class {
   text-align: left;
   border-bottom: 0.1px solid #e3e6f0;
-  padding: 14px 30px 14px 30px;
+  padding: 16px 25px 16px 25px;
 }
 
 </style>

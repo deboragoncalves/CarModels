@@ -1,5 +1,5 @@
   #main-div {
-    background-color: #f7f8fb;
+    background-color: #ffffff;
     box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
     -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
     -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
@@ -11,14 +11,21 @@
     font-size: 13px;
     font-family: Arial;
     background-color: #f7f8fb;
-    padding: 0px;
+    padding: 17px 0px 17px 17px;
     margin: 0px;
+    border-bottom: 0.5px solid #e3e6f0;
+  }
+
+  #table {
+    margin: 0px 20px 10px 20px;
+    padding: 5px 0px 50px 0px;
+    background-color: white;
   }
   
   #title-table {
     text-align: left;
     margin-top: 20px;
-    padding: 14px 30px 14px 30px;
+    padding: 13px 25px 13px 25px;
     border-bottom: 0.1px solid #e3e6f0;
     border-top: 0.1px solid #e3e6f0;
     color: gray;
@@ -34,5 +41,6 @@
     color: gray;
     width: 100%;
     border-collapse: collapse;
-    border: 0.1px solid #e3e6f0;
+    border-top: 0.1px solid #e3e6f0;
+    border-bottom: 0.1px solid #e3e6f0;
   }

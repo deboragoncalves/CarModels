@@ -13,7 +13,7 @@ export default {
 
 <style scoped>
 #header {
-  padding: 25px;
+  padding: 25px 25px 22px 25px;
   font-family: Arial;
   font-size: 17px;
   background-color: #FFFFFF;

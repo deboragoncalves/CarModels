@@ -1,19 +1,20 @@
 <template>
   <div>
     <div id="main-div">
-        <div id="sub-title">{{ textTitle }}</div>
+      <div id="sub-title">{{ textTitle }}</div>
+      <div id="table">
+        <div id="title-table">{{ titleTable }}</div>
 
-      <div id="title-table">{{ titleTable }}</div>
-
-      <table>
-        <tr v-for="(mark, index) in marks" :key="mark.codigo">
-          <td id="mark-name-class">{{ mark.nome | filteredNames }}</td>
-          <td
-            :class="[itemClicked == index ? 'green' : 'blue', 'see-model-class']"
-            v-on:click="showTableModels(mark.codigo, index)"
-          >Ver modelos</td>
-        </tr>
-      </table>
+        <table>
+          <tr v-for="(mark, index) in marks" :key="mark.codigo">
+            <td id="mark-name-class">{{ mark.nome | filteredNames }}</td>
+            <td
+              :class="[itemClicked == index ? 'green' : 'blue', 'see-model-class']"
+              v-on:click="showTableModels(mark.codigo, index)"
+            >Ver modelos</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -21,8 +22,8 @@
 <script>
 import { bus } from "../bus.js";
 import axios from "axios";
-import '@/assets/styles/tableStyle.css';
-import 'normalize.css';
+import "@/assets/styles/tableStyle.css";
+import "normalize.css";
 
 const marksEndpoint = "https://parallelum.com.br/fipe/api/v1/carros/marcas";
 
@@ -74,11 +75,11 @@ export default {
 #mark-name-class {
   text-align: left;
   border-bottom: 0.1px solid #e3e6f0;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 8px;
-  padding-bottom: 22px;
-  width: 40%;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 45%;
 }
 
 .see-model-class {
@@ -86,10 +87,7 @@ export default {
   border-bottom: 0.1px solid #e3e6f0;
   font-weight: bold;
   cursor: pointer;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 20px;
-  padding-bottom: 22px;
+  padding: 20px;
 }
 
 .green {
