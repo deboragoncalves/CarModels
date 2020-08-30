@@ -44,13 +44,13 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@700&family=Lato&family=Poppins:wght@300&family=Roboto:ital,wght@1,300&family=Ubuntu:wght@300&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Gayathri);
 
 #car-models {
   width: 80%;
   margin: 0 auto;
   margin-bottom: 30px;
-  font-family: 'Gayathri', sans-serif;
+  font-family: 'Gayathri', Arial; 
   background-color: #f7f8fb;
   box-shadow: 0 30px 30px rgba(58, 59, 69, 0.15);
   -webkit-box-shadow: 0 30px 30px rgba(58, 59, 69, 0.15);
@@ -75,8 +75,8 @@ export default {
 
 #title {
   color: #5a5c69;
-  font-size: 28px;
+  font-size: 23px;
+  font-weight: 600;
   margin: 24px 20px 24px 20px;
-  font-family: 'Gayathri', sans-serif;
 }
 </style>

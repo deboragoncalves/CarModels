@@ -7,8 +7,8 @@
   
   #sub-title {
     color: #4e73df;
-    font-weight: 600;
     font-size: 15px;
+    font-weight: 900;
     background-color: #f7f8fb;
     padding: 17px 0px 17px 17px;
     margin: 0px;
@@ -28,8 +28,8 @@
     border-bottom: 0.1px solid #e3e6f0;
     border-top: 0.1px solid #e3e6f0;
     color: gray;
-    font-weight: 900;
     font-size: 15px;
+    font-weight: 900;
     background-color: #ffffff;
   }
   
@@ -39,4 +39,8 @@
     color: gray;
     width: 100%;
     border-collapse: collapse;
+  }
+
+  table td {
+    font-weight: 550;
   }

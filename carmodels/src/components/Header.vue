@@ -17,7 +17,7 @@ export default {
   font-size: 20px;
   background-color: #FFFFFF;
   color: #1CC88A;
-  font-weight: 550;
+  font-weight: 600;
   box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
   -webkit-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
   -moz-box-shadow: 0 0 15px rgba(58, 59, 69, 0.15);
