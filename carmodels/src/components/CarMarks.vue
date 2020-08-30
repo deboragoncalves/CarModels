@@ -7,9 +7,11 @@
 
         <table>
           <tr v-for="(mark, index) in marks" :key="mark.codigo">
-            <td id="mark-name-class">{{ mark.nome | filteredNames }}</td>
             <td
-              :class="[itemClicked == index ? 'green' : 'blue', 'see-model-class']"
+              :class="['mark-name-class', (index == Object.keys(marks).length - 1 ? 'line-no-border' : 'line-name-border')]"
+            >{{ mark.nome | filteredNames }}</td>
+            <td
+              :class="['see-model-class', (itemClicked == index ? 'green' : 'blue'), (index == Object.keys(marks).length - 1 ? 'line-no-border' : 'line-name-border')]"
               v-on:click="showTableModels(mark.codigo, index)"
             >Ver modelos</td>
           </tr>
@@ -67,14 +69,21 @@ export default {
 
       localStorage.setItem("markId", id);
     },
-  },
-};
+  }
+}
 </script>
 
 <style>
-#mark-name-class {
-  text-align: left;
+.line-no-border {
+  border-bottom: none;
+}
+
+.line-name-border {
   border-bottom: 0.1px solid #e3e6f0;
+}
+
+.mark-name-class {
+  text-align: left;
   padding-top: 0px;
   padding-bottom: 10px;
   padding-left: 25px;
@@ -84,7 +93,6 @@ export default {
 
 .see-model-class {
   text-align: left;
-  border-bottom: 0.1px solid #e3e6f0;
   font-weight: bold;
   cursor: pointer;
   padding: 20px;

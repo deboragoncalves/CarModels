@@ -7,9 +7,8 @@
   
   #sub-title {
     color: #4e73df;
-    font-weight: bold;
-    font-size: 13px;
-    font-family: Arial;
+    font-weight: 600;
+    font-size: 15px;
     background-color: #f7f8fb;
     padding: 17px 0px 17px 17px;
     margin: 0px;
@@ -29,18 +28,15 @@
     border-bottom: 0.1px solid #e3e6f0;
     border-top: 0.1px solid #e3e6f0;
     color: gray;
-    font-weight: bold;
-    font-size: 13px;
+    font-weight: 900;
+    font-size: 15px;
     background-color: #ffffff;
   }
   
   table {
     background-color: #ffffff;
-    font-family: Arial;
-    font-size: 13px;
+    font-size: 15px;
     color: gray;
     width: 100%;
     border-collapse: collapse;
-    border-top: 0.1px solid #e3e6f0;
-    border-bottom: 0.1px solid #e3e6f0;
   }
