@@ -9,11 +9,12 @@ Passos para executar o projeto:
     Verificar instalações com os comandos:
 
     node --version
+
     npm --version
 
 4. No prompt de comando (do sistema operacional ou no próprio terminal do editor de código):
 
-    Digitar: 
+    Rodar comandos: 
 
     cd CarModels/carmodels
 
