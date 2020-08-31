@@ -10,7 +10,7 @@ git clone https://github.com/deboragoncalves/CarModels.git
 
 https://nodejs.org/en/download/
 
-### Check node and npm installation 
+### Check the node and npm installation 
 
 In the command prompt (of the operational system or in the terminal of the code editor):
 
@@ -18,11 +18,11 @@ In the command prompt (of the operational system or in the terminal of the code 
 
     npm --version
 
-### Install VueJs
+### Install Vue
 
 https://cli.vuejs.org/guide/installation.html
 
-### Check VueJs installation
+### Check the Vue installation
 
 In the command prompt (of the operational system or in the terminal of the code editor):
 
