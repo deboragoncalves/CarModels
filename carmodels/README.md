@@ -1,24 +1,17 @@
 # carmodels
 
-## Project setup
-```
-npm install
-```
+Passos para executar o projeto:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+1. Clonar projeto: git clone https://github.com/deboragoncalves/CarModels.git;
+2. Instalar node: https://nodejs.org/en/download/;
+3. No prompt de comando (do sistema operacional ou no próprio terminal do editor de código):
 
-### Compiles and minifies for production
-```
-npm run build
-```
+    Digitar: 
 
-### Lints and fixes files
-```
-npm run lint
-```
+    cd CarModels/carmodels
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+    npm install 
+
+    npm run serve
+
+4. Escolher o endereço do localhost.
