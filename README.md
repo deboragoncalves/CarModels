@@ -2,19 +2,29 @@
 
 Steps to run the project:
 
-1. Clone the project: git clone https://github.com/deboragoncalves/CarModels.git;
-2. Install node: https://nodejs.org/en/download/;
-3. In the command prompt (of the operational system or in the terminal of the code editor):
+# Clone the project
 
-    Check the installations with the commands:
+git clone https://github.com/deboragoncalves/CarModels.git
+
+# Install node
+
+https://nodejs.org/en/download/
+
+# Check node and npm installation 
+
+In the command prompt (of the operational system or in the terminal of the code editor):
 
     node --version
 
     npm --version
 
-4.  In the command prompt (of the operational system or in the terminal of the code editor):
+# Install VueJs
 
-    Run the commands: 
+https://cli.vuejs.org/guide/installation.html
+
+# Run the project 
+
+In the command prompt (of the operational system or in the terminal of the code editor): 
 
     cd CarModels/carmodels
 
@@ -22,4 +32,4 @@ Steps to run the project:
 
     npm run serve
 
-5. Chose the localhost address.
+# Chose the localhost address.
