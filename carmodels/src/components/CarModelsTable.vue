@@ -37,14 +37,21 @@ export default {
   created() {
     var self = this;
 
+    // Escuta o evento "showModelsTable" e torna o valor da variável "showModelsTable" "true".
+
     bus.$on("showModelsTable", (data) => {
       self.showModelsTable = data;
     }),
+
+    // Escuta o evento "getAllModels" e chama o método "getAllModels", que irá consumir os dados da API.
+
       bus.$on("getAllModels", self.getAllModels)
   },
   methods: {
     getAllModels() {
       var self = this;
+
+      // Consome os dados da API pelo método get. O id da marca é necessário na URL e está armazenado em Local Storage.
 
       axios
         .get(
@@ -52,7 +59,13 @@ export default {
             localStorage.getItem("markId") +
             '/modelos'
         )
+
+        // Se a requisição for bem sucedida, o array "listModels" vai receber os dados em formato de JSON.
+
         .then((response) => (self.listModels = response.data.modelos))
+
+        // Se der erro, exibe mensagem no console.log
+
         .catch((err) => console.log("Error: " + err));
     },
   },

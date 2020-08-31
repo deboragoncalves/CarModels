@@ -49,23 +49,42 @@ export default {
   methods: {
     getAllMarks() {
       var self = this;
+
+      // Consome os dados da API pelo método get
       axios
         .get(marksEndpoint)
+
+        // Se a requisição for bem sucedida, o array "marks" vai receber os dados em formato de JSON.
+
         .then((response) => {
           self.marks = response.data;
         })
+
+      // Se der erro, exibe mensagem no console.log
+
         .catch((err) => console.log("Error: " + err));
     },
     showTableModels(id, index) {
       var self = this;
 
+      // A variável "itemClicked" recebe o índice no array do item clicado. 
+      // Se o item for o último do array, excluir border-bottom (v-bind class).
+
       self.itemClicked = index;
+
+      // Se o item do array for clicado, a variável "showTable" muda para "true", 
+      // para que o componente "CarModelsTable" seja mostrado.
 
       self.showTable = true;
 
       bus.$emit("showModelsTable", self.showTable);
 
-      bus.$emit("getAllModels");
+      // Quando clicar em um item, chamar o evento "getAllModels", que será escutado no componente "CarModelsTable".
+
+      bus.$emit("getAllModels"); 
+
+      // O código da marca é armazenado em Local Storage e depois será utilizado para consumir os dados
+      // e exibir a tabela dos modelos, no componente "CarModelsTable".
 
       localStorage.setItem("markId", id);
     },
