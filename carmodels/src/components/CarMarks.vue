@@ -42,7 +42,7 @@ export default {
       marks: [],
     };
   },
-  mounted() {
+  created() {
     var self = this;
     self.getAllMarks();
   },

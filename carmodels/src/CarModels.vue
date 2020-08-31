@@ -25,6 +25,7 @@ import CarMarks from "./components/CarMarks.vue";
 import CarModelsTable from "./components/CarModelsTable.vue";
 
 export default {
+  
   name: "CarModels",
   components: {
     Header,
