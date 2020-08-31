@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
   </head>
   <body>
+
+<!-- 
+Alguns erros aparecem no console.log:  
+
+[WDS] Disconnected!
+GET http://192.168.0.16:8080/sockjs-node/info?t=1598846215849 net::ERR_CONNECTION_TIMED_OUT
+GET http://192.168.0.16:8080/sockjs-node/info?t=1598846222158 net::ERR_CONNECTION_TIMED_OUT
+GET http://192.168.0.16:8080/sockjs-node/info?t=1598846235514 net::ERR_CONNECTION_TIMED_OUT
+GET http://192.168.0.16:8080/sockjs-node/info?t=1598846253069 net::ERR_CONNECTION_TIMED_OUT
+
+Mas, seguindo o link abaixo, esses erros são normais a partir da versão 2.0 da Webpack Dev Server e são possíveis de serem silenciados, o que, infelizmente, não consegui fazer.   
+
+  https://medium.com/webpack/whats-new-in-webpack-dev-server-2-0-a66848c3679
+-->
+
     <div id="carModels"></div>
   </body>
 </html>

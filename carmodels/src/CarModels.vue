@@ -36,10 +36,7 @@ export default {
     return {
       textTitle: "Veículos",
     };
-  },
-  created() {
-    localStorage.clear();
-  },
+  }
 };
 </script>
 
