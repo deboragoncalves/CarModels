@@ -1,20 +1,20 @@
 # CarModels
 
-Passos para executar o projeto:
+Steps to run the project:
 
-1. Clonar projeto: git clone https://github.com/deboragoncalves/CarModels.git;
-2. Instalar node: https://nodejs.org/en/download/;
-3. No prompt de comando (do sistema operacional ou no próprio terminal do editor de código):
+1. Clone the project: git clone https://github.com/deboragoncalves/CarModels.git;
+2. Install node: https://nodejs.org/en/download/;
+3. In the command prompt (of the operational system or in the terminal of the code editor):
 
-    Verificar instalações com os comandos:
+    Check the installations with the commands:
 
     node --version
 
     npm --version
 
-4. No prompt de comando (do sistema operacional ou no próprio terminal do editor de código):
+4.  In the command prompt (of the operational system or in the terminal of the code editor):
 
-    Rodar comandos: 
+    Run the commands: 
 
     cd CarModels/carmodels
 
@@ -22,4 +22,4 @@ Passos para executar o projeto:
 
     npm run serve
 
-5. Escolher o endereço do localhost.
+5. Chose the localhost address.
