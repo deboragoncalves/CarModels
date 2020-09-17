@@ -1,5 +1,7 @@
 # Car Models
 
+This project was done as a test for the position of Front End Jr. Developer in Navita. The goal was to show mark and model cars, with data based in an external API.
+
 Steps to run the project:
 
 ### Clone the project
